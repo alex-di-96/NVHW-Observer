@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=77.0.3"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "nvhw-observer"
+version = "0.2.0.dev0"
+description = "GPU research evidence tools: PCI inventory, UEFI log analysis and OpenGL validation"
+requires-python = ">=3.10"
+license = "GPL-2.0-only"
+license-files = ["LICENSE", "NOTICE.md", "LICENSES/MIT.txt"]
+readme = "README.md"
+dependencies = []
+classifiers = [
+    "Development Status :: 2 - Pre-Alpha",
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "Operating System :: POSIX :: Linux",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Topic :: System :: Hardware",
+]
+
+[project.scripts]
+nvhw-observer = "nvhw_observer.__main__:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]

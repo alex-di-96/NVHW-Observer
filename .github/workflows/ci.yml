@@ -1,0 +1,52 @@
+name: Source and package checks
+on: [push, pull_request, workflow_dispatch]
+permissions:
+  contents: read
+jobs:
+  python:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    strategy:
+      fail-fast: false
+      matrix:
+        python: ['3.10', '3.12', '3.14']
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7
+        with:
+          python-version: ${{ matrix.python }}
+      - run: python tools/release.py check
+      - run: python -m pip install build twine
+      - run: PYTHONPATH=src python -m unittest discover -s tests -v
+      - run: python -m build
+      - run: python -m twine check dist/*
+      - name: Test installed wheel away from checkout
+        run: |
+          python -m venv "$RUNNER_TEMP/nvhw-installed"
+          "$RUNNER_TEMP/nvhw-installed/bin/python" -m pip install --no-deps dist/*.whl
+          cd "$RUNNER_TEMP"
+          "$RUNNER_TEMP/nvhw-installed/bin/nvhw-observer" --version
+          "$RUNNER_TEMP/nvhw-installed/bin/nvhw-observer" profiles
+  efi-mocks:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          persist-credentials: false
+      - name: Install build and emulation tools
+        run: sudo apt-get update && sudo apt-get install -y gnu-efi qemu-system-x86 ovmf dosfstools mtools parted
+      - name: Build both reviewed profiles twice
+        run: |
+          python3 uefi/build.py --gnu-efi-root / --profile m1 --out "$RUNNER_TEMP/m1-a"
+          python3 uefi/build.py --gnu-efi-root / --profile m1 --out "$RUNNER_TEMP/m1-b"
+          cmp "$RUNNER_TEMP/m1-a/nvhw-observer-0.efi" "$RUNNER_TEMP/m1-b/nvhw-observer-0.efi"
+          python3 uefi/build.py --gnu-efi-root / --profile m2 --out "$RUNNER_TEMP/m2-a"
+          python3 uefi/build.py --gnu-efi-root / --profile m2 --out "$RUNNER_TEMP/m2-b"
+          cmp "$RUNNER_TEMP/m2-a/nvhw-observer-0.efi" "$RUNNER_TEMP/m2-b/nvhw-observer-0.efi"
+      - name: Run public QEMU controls (no GPU passthrough)
+        run: |
+          python3 uefi/qemu_test.py --build "$RUNNER_TEMP/m1-a" --out "$RUNNER_TEMP/qemu-m1"
+          python3 uefi/qemu_test.py --build "$RUNNER_TEMP/m2-a" --out "$RUNNER_TEMP/qemu-m2"

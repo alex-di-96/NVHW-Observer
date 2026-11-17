@@ -1,0 +1,19 @@
+{
+  "upstream_workspace_stage": "uefi-gsp-authority-v6-20261112",
+  "source_hashes": {
+    "analyze_observer.py": "2aace73b66a24564f913a4ab1b3edec2c4be4f53a1e206d6daa661a62ba895b8",
+    "analyze_authority.py": "912969626a951fc805bf96905d2d9fe8ab50cee0f5c2fa8702628f2922f001bd",
+    "test_observer.py": "be6ba59f00005b0c25bb9defedc19eb58f6382d74a60dce51c09bf7581399d0c",
+    "test_authority.py": "270c0dc7e86e22c6040f4830810756a374af67a360c30d0c2c8627067f09dcc7"
+  },
+  "changes": [
+    "relative imports for packaged decoders",
+    "tests use package imports",
+    "historical hardware-file tests excluded from standalone suite"
+  ],
+  "excluded_test_methods": [
+    "test_real_v2_log_is_not_misparsed_as_new_v3",
+    "test_v1_hardware_failure_is_not_accepted_as_v2_success"
+  ],
+  "contains_firmware": false
+}
