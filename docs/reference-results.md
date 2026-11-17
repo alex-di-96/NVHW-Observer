@@ -76,4 +76,5 @@ instruction model. A synthetic C4B0 entry passes only that membership check;
 it does not prove device creation or decoding. No live V2 response was captured.
 
 
-See [design](../DESIGN.md), [commands](usage.md) and [source lineage](../NOTICE.md).
+See [design](../DESIGN.md), [commands](usage.md), [source lineage](../NOTICE.md)
+and [technical references](sources.md).

@@ -1,5 +1,8 @@
 # Source lineage
 
+The annotated [sources and acknowledgements](docs/sources.md) distinguish code
+lineage, technical references, external tools and projects surveyed for hypotheses.
+
 This development package extracts host-side tooling from the HW_Tune research
 on the owner's CMP 50HX. It is not an NVIDIA product and does not contain GPU
 firmware, a ROM, the EFI compute transaction, access keys or captured machine logs.

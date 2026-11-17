@@ -3,7 +3,7 @@
 GPU research tools that keep **observations, advertised capabilities and completed
 work** separate. Development preview **0.2.0.dev0** for Linux; Python 3.10+.
 
-[Русский](README.ru.md) · [Commands](docs/usage.md) · [Reference results](docs/reference-results.md) · [Design](DESIGN.md) · [Contributing](CONTRIBUTING.md)
+[Русский](README.ru.md) · [Commands](docs/usage.md) · [Reference results](docs/reference-results.md) · [Sources](docs/sources.md) · [Design](DESIGN.md) · [Contributing](CONTRIBUTING.md)
 
 | Included | What it establishes |
 |---|---|
@@ -91,6 +91,13 @@ includes the private research Git history.
 GPL-2.0-only; see [LICENSE](LICENSE) and [NOTICE.md](NOTICE.md). Adapted MIT
 material retains its [notice](LICENSES/MIT.txt). This is an independent project,
 not an NVIDIA product. No NVIDIA firmware, ROMs or driver binaries are bundled.
+
+## Sources and acknowledgements
+
+Our [annotated source list](docs/sources.md) credits the upstream UEFI and CMP
+projects, NVIDIA/Nouveau sources, official API specifications and research tools.
+It identifies examined revisions and explains each source's role. Thank you to
+their authors and maintainers for making this research possible.
 
 ## Support the Project =)
 
