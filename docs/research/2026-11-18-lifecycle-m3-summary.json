@@ -1,0 +1,218 @@
+{
+  "schema": "nvhw.public-research-summary.v1",
+  "date_utc": "2026-11-18",
+  "evidence": "author-reported structured extraction; private raw captures not distributed",
+  "board": "NVIDIA CMP 50HX / TU102",
+  "driver": "580.178.04 open B2; modified, not stock",
+  "kernel": "7.0.0-42-generic",
+  "scope": "experimental laboratory lifecycle M3; public M1/M2 code unchanged",
+  "power_cycle": {
+    "completion_reported_by_operator": true,
+    "requested_ac_off_seconds": 60,
+    "physically_measured": false
+  },
+  "uefi": {
+    "phases": [
+      "pre_unlock",
+      "post_fwsec_step",
+      "post_payload",
+      "post_unlock",
+      "handoff"
+    ],
+    "words_per_phase": 90,
+    "total_reads": 450,
+    "transport_errors": 0,
+    "invalid_values": 0,
+    "fwsec_step": "ran",
+    "compute_transaction_complete": true,
+    "sequential_snapshots": true,
+    "pre_devinit": false,
+    "new_observer_gpu_mmio_writes": 0,
+    "existing_compute_transaction_performs_writes": true,
+    "changed_registers": [
+      {
+        "address": "00409650",
+        "name": "FECS_PLM",
+        "values": [
+          "0xffffff8f",
+          "0xffffff8f",
+          "0xffffffff",
+          "0xffffffef",
+          "0xffffffef"
+        ]
+      },
+      {
+        "address": "00409664",
+        "name": "FECS_SS0",
+        "values": [
+          "0x20020000",
+          "0x20020000",
+          "0x20020000",
+          "0x88888888",
+          "0x88888888"
+        ]
+      },
+      {
+        "address": "00409668",
+        "name": "FECS_READOUT",
+        "values": [
+          "0x16db6ed",
+          "0x16db6ed",
+          "0x16db6ed",
+          "0x0",
+          "0x0"
+        ]
+      },
+      {
+        "address": "0040966c",
+        "name": "FECS_SS1",
+        "values": [
+          "0x7",
+          "0x7",
+          "0x7",
+          "0x8",
+          "0x8"
+        ]
+      },
+      {
+        "address": "001fa824",
+        "name": "WPR2_LO",
+        "values": [
+          "0x1ffffe00",
+          "0x27fe000",
+          "0x2777000",
+          "0x2777000",
+          "0x2777000"
+        ]
+      },
+      {
+        "address": "001fa828",
+        "name": "WPR2_HI",
+        "values": [
+          "0x0",
+          "0x27fee00",
+          "0x0",
+          "0x0",
+          "0x0"
+        ]
+      }
+    ],
+    "unchanged_register_count": 84,
+    "unchanged_top_words": 64,
+    "selected_unchanged_registers": {
+      "00021378": "0x00000007",
+      "00021c24": "0x00000007",
+      "00021d68": "0x00000003",
+      "00021c04": "0x00000001",
+      "00021168": "0x00000000",
+      "00118234": "0x000003ff"
+    }
+  },
+  "cross_boot_initial_ss": {
+    "previous_ss0": "0x00000000",
+    "previous_ss1": "0x00000000",
+    "current_ss0": "0x20020000",
+    "current_ss1": "0x00000007",
+    "shared_valid_frontend_fields": 77,
+    "cause_established": false
+  },
+  "runtime": {
+    "compute": {
+      "fp32_cpu_reference_max_error": 0,
+      "fp16_cpu_reference_max_error": 0,
+      "memory_bytes": 134217728,
+      "memory_pattern_pass": true
+    },
+    "cupti": {
+      "kernel_records": 5,
+      "kernel_names": [
+        "turing_fp16_s1688gemm_fp16_64x128_sliced1x2_ldg8_f2f_nn"
+      ],
+      "finite_result": true
+    },
+    "opengl": {
+      "runs": 2,
+      "pixels_checked_per_run": 8192,
+      "interop_bytes_per_run": 65536,
+      "passed": true
+    },
+    "nvenc": {
+      "cuda_open_status": 2,
+      "opengl_open_status": 2,
+      "handles_nonnull": false,
+      "frames_submitted_by_session_probe": 0
+    },
+    "nvdec": {
+      "direct_create_status": 801,
+      "direct_create_used_caps_gate": false,
+      "handle_nonnull": false,
+      "capability_profiles": 5,
+      "profiles_supported": 0
+    },
+    "h264_frame_attempts": {
+      "requested_frames": 4,
+      "cuvid_exit": 234,
+      "cuvid_stopped_at_capability_gate": true,
+      "decoded_frames": 0,
+      "nvenc_exit": 187,
+      "nvenc_stopped_at_session_creation": true,
+      "encoded_bitstream_bytes": 0,
+      "software_codec_fallback_requested": false
+    },
+    "vulkan_rt": {
+      "rays": 6144,
+      "tlas_transforms": 2,
+      "mismatches": 0,
+      "validation_errors": 0,
+      "dedicated_rt_proven": false
+    },
+    "optix": {
+      "rtcore_version_status": 0,
+      "rtcore_version": 0
+    }
+  },
+  "nvenc_trace": {
+    "events": 544,
+    "ioctls": 539,
+    "capture_errors": 0,
+    "engine_ids": [
+      1,
+      9,
+      10,
+      11,
+      12,
+      13,
+      34
+    ],
+    "class_count": 81,
+    "decoder_c4b0_present": false,
+    "encoder_c4b7_present": false,
+    "codec_class_allocations_in_api_windows": 0,
+    "preceding_trace_summary_matches": true,
+    "precise_rejection_branch_resolved": false
+  },
+  "checks": {
+    "experimental_host_tests": 132,
+    "experimental_python_tests": 20,
+    "qemu_scenarios": 11,
+    "qemu_emulates_tu102": false,
+    "provenance_helper_tests": 3,
+    "system_health_checks": 12,
+    "kernel_or_driver_faults": 0,
+    "private_sealed_files": 158,
+    "private_input_pins": 10,
+    "archive_replay_pass": true
+  },
+  "conclusions": {
+    "new_codec_activation": false,
+    "dedicated_rt_execution_proven": false,
+    "physical_display_heads_retested": false,
+    "jpeg_retested": false,
+    "vulkan_video_retested": false,
+    "performance_benchmark": false
+  },
+  "provenance": {
+    "experimental_efi_sha256": "be9fc07e7d0150413bfce10fc5d515da0e05d68f5f4fbd8cf5d6b4b4badb0320",
+    "private_evidence_manifest_sha256": "e386462c6214af6025b1a1cb6e75b3b701994d497d6ab05c694b591621be00e9"
+  }
+}

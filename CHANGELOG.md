@@ -1,5 +1,12 @@
 # Changelog
 
+## Research update — 2026-11-18
+
+- Published the five-phase laboratory M3 result and a structured measurement summary.
+- Recorded actual NVENC/NVDEC failures alongside passing compute, OpenGL/interop and Vulkan ray checks.
+- Documented the FWSEC boundary, unresolved initial SS state and next codec/RT/display investigations.
+- Documentation/data only; public CLI and M1/M2 EFI behavior are unchanged.
+
 ## 0.2.0.dev0 — initial public development preview
 
 - Linux PCI inventory with explicit device identity and no register access.

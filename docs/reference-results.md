@@ -6,6 +6,16 @@ proprietary libraries or laboratory workloads. The public unit suite does not
 independently reproduce these hardware results. They describe one CMP 50HX and
 must not be generalized to every TU102 board.
 
+## 2026-11-18 update
+
+The experimental [lifecycle M3 report](research/2026-11-18-lifecycle-m3.md) adds
+a post-FWSEC observation and joint runtime checks. FWSEC ran; WPR2 and compute
+state changed, while sampled video/display/RT fields did not. Direct NVDEC
+create and NVENC session creation still failed; CUDA, OpenGL/interop and Vulkan
+ray correctness passed. Dedicated RT execution remains unproven. Initial SS0/SS1
+differed between two boots, with cause unresolved. The [structured summary](research/2026-11-18-lifecycle-m3-summary.json)
+contains selected measurements, not raw captures. Public M1/M2 code is unchanged.
+
 ## Hardware plan
 
 | Board offered by the owner | Role | Current project status |

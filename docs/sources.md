@@ -78,6 +78,12 @@ other architectures must not be conflated with extra memory on our 10 GiB TU102.
 
 ## Our observations and their limits
 
+The [2026-11-18 lifecycle M3 update](research/2026-11-18-lifecycle-m3.md) adds
+first-party measurements using the existing laboratory loader and API tools.
+Its [structured summary](research/2026-11-18-lifecycle-m3-summary.json) records
+selected values; it is not an independently reproduced upstream result.
+
+
 The dated [reference-board findings](reference-results.md) are our own
 author-reported measurements. Upstream documentation supplies API definitions
 and comparison points; it does not independently verify those measurements.

@@ -13,6 +13,8 @@ include README.md
 include README.ru.md
 include docs/reference-results.md
 include docs/releasing.md
+include docs/research/2026-11-18-lifecycle-m3-summary.json
+include docs/research/2026-11-18-lifecycle-m3.md
 include docs/sources.md
 include docs/usage.md
 include legacy-v6-provenance.json

@@ -14,6 +14,8 @@ README.md
 README.ru.md
 docs/reference-results.md
 docs/releasing.md
+docs/research/2026-11-18-lifecycle-m3-summary.json
+docs/research/2026-11-18-lifecycle-m3.md
 docs/sources.md
 docs/usage.md
 legacy-v6-provenance.json

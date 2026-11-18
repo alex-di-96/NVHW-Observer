@@ -17,6 +17,8 @@ work** separate. Development preview **0.2.0.dev0** for Linux; Python 3.10+.
 engines, hardware RT and OpenGL remain separate result fields. A successful
 capture or render cannot turn unmeasured features into PASS.
 
+Latest lab update: [five-phase M3 results and research directions](docs/research/2026-11-18-lifecycle-m3.md) (2026-11-18), with a [structured summary](docs/research/2026-11-18-lifecycle-m3-summary.json). This is a research report; the public M1/M2 code is unchanged.
+
 ## Install and try
 
 From this source directory:
